@@ -18,6 +18,38 @@ This project contains companion code for the book *ROS 2 Robot Development: From
 
 ---
 
+## 章节说明 / Chapters
+
+| 章节 | 内容 | 说明文档 |
+|------|------|----------|
+| chapt1 | 环境与 Hello World / CMake | [chapt1/README.md](chapt1/README.md) |
+| chapt2 | 第一个节点、现代 C++、多线程 | [chapt2/README.md](chapt2/README.md) |
+| chapt3 | 话题通信、自定义消息 | [chapt3/README.md](chapt3/README.md) |
+| chapt4 | 服务、参数、Launch | [chapt4/README.md](chapt4/README.md) |
+| chapt5 | TF、Git、Rosbag | [chapt5/README.md](chapt5/README.md) |
+| chapt6 | URDF / Gazebo / ros2_control | [chapt6/README.md](chapt6/README.md) |
+| chapt7 | 建图导航与自动巡检 | [chapt7/README.md](chapt7/README.md) |
+| chapt8 | pluginlib 与自定义 Nav2 插件 | [chapt8/README.md](chapt8/README.md) |
+| chapt9 | 真机 Bringup | [chapt9/README.md](chapt9/README.md) |
+| chapt10 | Executor / Lifecycle / QoS 等进阶 | [chapt10/README.md](chapt10/README.md) |
+
+### 通用运行提示
+
+```bash
+# 若使用 conda，请优先系统 Python 3.10，避免 rclpy 冲突
+export PATH="/usr/bin:$PATH"
+source /opt/ros/humble/setup.bash
+
+# 各章工作空间（除 chapt1）典型流程
+cd chaptN/<workspace>
+colcon build
+source install/setup.bash
+```
+
+推荐平台：**Ubuntu 22.04 + ROS 2 Humble**。
+
+---
+
 ## 作者 / Authors  
 - [小鱼 (Fish)](https://github.com/fishros)   
 

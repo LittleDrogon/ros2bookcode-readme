@@ -1,4 +1,4 @@
-# Install script for directory: /home/mzebra/chapt1
+# Install script for directory: /home/lyzn-robot/ros2bookcode/chapt1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mzebra/chapt1/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/lyzn-robot/ros2bookcode/chapt1/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

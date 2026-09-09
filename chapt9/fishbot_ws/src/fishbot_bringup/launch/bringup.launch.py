@@ -45,6 +45,6 @@ def generate_launch_description():
         urdf2tf,
         odom2tf,
         microros_agent,
-        ros_serail2wifi,
+        ros_serial2wifi,
         ydlidar_delay
     ])
