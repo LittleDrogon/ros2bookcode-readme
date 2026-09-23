@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1. How to save Orbbec SDK v2 log &mdash; OrbbecSDK V2  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a2eacb60" />
+
+  
+    <link rel="shortcut icon" href="../../_static/orbbec_footerlogo_3d_world.svg"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. License" href="../license.html" />
+    <link rel="prev" title="4. FAQ" href="FAQs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            OrbbecSDK V2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../1_overview/overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../1_overview/Introduction.html">1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../1_overview/SDKOverview.html">1.2. SDK  Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/SDKOverview.html#terms">1.2.1. Terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/SDKOverview.html#orbbec-sdk-v2-architecture-overview">1.2.2. Orbbec SDK v2 Architecture Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/SDKOverview.html#sdk-concept-overview">1.2.3. SDK Concept Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/SDKOverview.html#sdk-programming-model">1.2.4. SDK Programming Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../1_overview/EnvironmentSetup.html">1.3. Environment Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/EnvironmentSetup.html#sdk-download">1.3.1. SDK Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/EnvironmentSetup.html#device-support-verification">1.3.2. Device Support Verification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../1_overview/EnvironmentSetup.html#development-environment-configuration">1.3.3. Development Environment Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../2_QuickStarts/QuickStarts.html">2. QuickStarts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2_QuickStarts/QuickStart.html">2.1. Quick Start on Windows Platform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#metadata-registration">2.1.1. Metadata registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#build-sdk-package-zip">2.1.2. build SDK package(.zip)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#quick-start-on-linux-platform">2.2. Quick Start on Linux Platform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#install-udev-rules-script">2.2.1. install udev rules script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#id1">2.2.2. build SDK package(.zip)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#how-to-use-install-package">2.3. How to Use install package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#install-via-deb-package">2.3.1. Install via .deb Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../2_QuickStarts/QuickStart.html#install-via-exe-package">2.3.2. Install via .exe Package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../3_Application_Guide/Application_Guide.html">3. Application Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html">3.1. Create Device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#create-pipeline">3.2. Create Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-the-sensor-list">3.3. Obtain the Sensor List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-video-data-streams">3.4. Obtain Video Data Streams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#blocking-polling-mode">3.4.1. Blocking Polling Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#asynchronous-callback-mode">3.4.2. Asynchronous Callback Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-imu-data-streams">3.5. Obtain Imu Data Streams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#id1">3.5.1. Blocking Polling Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#id2">3.5.2. Asynchronous Callback Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#frame-aggregate">3.6. Frame Aggregate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#d2c">3.7. D2C</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#hardware-d2c">3.7.1. Hardware D2C</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#software-d2c">3.7.2. Software D2C</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#software-c2d">3.8. Software C2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#depth-point-cloud">3.9. Depth Point Cloud</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#synchronous-mode">3.9.1. Synchronous Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#id3">3.9.2. Asynchronous Callback Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#rgbd-point-cloud">3.10. RGBD Point Cloud</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#id4">3.10.1. Synchronous Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#id5">3.10.2. Asynchronous Callback Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#noise-removeal-filter">3.11. Noise Removeal Filter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#hardware-noise-removeal-filter">3.11.1. Hardware Noise Removeal Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#software-noise-removeal-filter">3.11.2. Software Noise Removeal Filter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#depth-post-processing-filters">3.12. Depth Post-Processing Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#recording-and-playback">3.13. Recording and Playback</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#recording">3.13.1. Recording</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#playback">3.13.2. Playback</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#firmware-update">3.14. Firmware Update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#update-preset">3.15. Update Preset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#device-disconnection-and-reconnection">3.16. Device Disconnection and Reconnection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#commonly-used-interfaces">3.17. Commonly Used Interfaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-the-serial-number">3.17.1. Obtain the Serial Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#ldp-switch">3.17.2. LDP Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#lrm-switch">3.17.3. LRM Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-ldp-measurement-value">3.17.4. Obtain LDP Measurement Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-ldp-protection-status">3.17.5. Obtain LDP Protection Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#laser-switch">3.17.6. Laser Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#device-reboot">3.17.7. Device Reboot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#network-device-ip-address-modification-settings">3.17.8. Network Device IP Address Modification Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-device-temperature">3.17.9. Obtain Device Temperature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-device-baseline">3.17.10. Obtain Device Baseline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-streamprofile">3.17.11. Obtain StreamProfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-imu-streamprofile">3.17.12. Obtain IMU StreamProfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-intrinsic-and-extrinsic-parameters">3.17.13. Obtain Intrinsic and Extrinsic Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-imu-intrinsic-parameters">3.17.14. Obtain IMU Intrinsic Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-the-extrinsic-parameters-between-video-frames-and-imu">3.17.15. Obtain the Extrinsic Parameters Between Video Frames and IMU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-ae">3.17.16. Set Depth AE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-exposure">3.17.17. Set Depth Exposure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-gain">3.17.18. Set Depth Gain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-mirror">3.17.19. Set Depth Mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-flip">3.17.20. Set Depth Flip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-depth-rotation">3.17.21. Set Depth Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-unit-of-depth">3.17.22. Set the Unit of Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-minimum-and-maximum-values-of-depth">3.17.23. Set the Minimum and Maximum Values of Depth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#camera-depth-working-mode">3.17.24. Camera Depth Working Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#disparity-to-depth-d2d">3.17.25. Disparity to Depth (D2D)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-ae">3.17.26. Set IR AE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-exposure">3.17.27. Set IR Exposure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-gain">3.17.28. Set IR Gain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-target-brightness">3.17.29. Set IR Target Brightness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-maximum-exposure-value">3.17.30. Set IR Maximum Exposure Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-mirror">3.17.31. Set IR Mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-flip">3.17.32. Set IR Flip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-ir-rotation">3.17.33. Set IR Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-ae">3.17.34. Set Color AE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-exposure">3.17.35. Set Color Exposure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-gain">3.17.36. Set Color Gain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-mirror">3.17.37. Set Color Mirror</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-flip">3.17.38. Set Color Flip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-rotation">3.17.39. Set Color Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-automatic-white-balance-awb">3.17.40. Set Color Automatic White Balance (AWB)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-white-balance-parameters">3.17.41. Set Color White Balance Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-color-brightness">3.17.42. Set the Color Brightness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-sharpness">3.17.43. Set Color Sharpness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-gamma">3.17.44. Set Color Gamma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-saturation">3.17.45. Set Color Saturation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-hue">3.17.46. Set Color Hue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-auto-exposure-priority">3.17.47. Set Color Auto Exposure Priority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-backlight-compensation">3.17.48. Set Color Backlight Compensation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-contrast">3.17.49. Set Color Contrast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-color-power-line-frequency">3.17.50. Set Color power line frequency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#laser-on-off">3.17.51. Laser On-Off</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#hdr-merge">3.17.52. HDR Merge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#obtain-metadata">3.17.53. Obtain MetaData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#triggered-capture">3.17.54. Triggered Capture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#software-triggered-capture">3.17.54.1. Software Triggered Capture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#timed-capture">3.17.54.2. Timed Capture</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#timestamp-reset">3.17.55. Timestamp Reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#device-time-synchronization">3.17.56. Device Time Synchronization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#multi-device-synchronization">3.17.57. Multi-device Synchronization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#usb-and-network-device">3.17.57.1. USB and Network Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#gmsl-device">3.17.57.2. GMSL device</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#build">3.17.57.2.1. Build</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#multi-devices-sync-configuration">3.17.57.2.2. Multi-devices sync configuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#test-results">3.17.57.2.3. Test Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#log-management">3.18. Log management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-log-level">3.18.1. Set the log level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-log-output-to-the-console">3.18.2. Set the Log Output to the Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-log-output-to-file">3.18.3. Set Log Output to File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#set-the-log-callback-output">3.18.4. Set the Log Callback Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3_Application_Guide/ApplicationGuide.html#modify-log-level-in-configuration-file">3.18.5. Modify Log level in configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="FAQs.html">4. FAQ</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. How to save Orbbec SDK v2 log</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-save-logs-using-orbbecviewer">4.1.1. How to save logs using OrbbecViewer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">4.1.1.1. windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux-x64-arm64">4.1.1.2. Linux (x64/ARM64)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-save-logs-in-an-orbbec-sdk-v2-application">4.1.2. How to save logs in an Orbbec SDK v2 application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">4.1.2.1. windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">4.1.2.2. Linux (x64/ARM64)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-increase-the-usbfs-memory-limit">4.2. How to increase the usbfs memory limit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">5. License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">OrbbecSDK V2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="FAQs.html"><span class="section-number">4. </span>FAQ</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1. </span>How to save Orbbec SDK v2 log</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/source/4_FAQ/FAQ.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-save-orbbec-sdk-v2-log">
+<h1><span class="section-number">4.1. </span>How to save Orbbec SDK v2 log<a class="headerlink" href="#how-to-save-orbbec-sdk-v2-log" title="Link to this heading"></a></h1>
+<p>This guide explains how to save logs from OrbbecViewer and Orbbec SDK v2 applications on both Windows and Linux.</p>
+<section id="how-to-save-logs-using-orbbecviewer">
+<h2><span class="section-number">4.1.1. </span>How to save logs using OrbbecViewer<a class="headerlink" href="#how-to-save-logs-using-orbbecviewer" title="Link to this heading"></a></h2>
+<p>First, set the log level to Debug. To enable device firmware logs,check the Heartbeat option.</p>
+<p><img alt="image" src="../../_images/OrbbecViewer_setLog.png" /></p>
+<p>Logs are saved in the Log folder located in the same directory as OrbbecViewer.</p>
+<ul class="simple">
+<li><p>Note: If the SDK is installed via the installer, the logs are saved in the Log directory alongside OrbbecViewer in the installation path.</p></li>
+</ul>
+<section id="windows">
+<h3><span class="section-number">4.1.1.1. </span>windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
+<p>On Windows, the log path is as follows:</p>
+<p><img alt="image" src="../../_images/OrbbecViewer_windows_log.png" /></p>
+</section>
+<section id="linux-x64-arm64">
+<h3><span class="section-number">4.1.1.2. </span>Linux (x64/ARM64)<a class="headerlink" href="#linux-x64-arm64" title="Link to this heading"></a></h3>
+<p>On Linux (x64/ARM64), the log path is as follows:
+<img alt="image" src="../../_images/OrbbecViewer_linux_log.png" /></p>
+</section>
+</section>
+<section id="how-to-save-logs-in-an-orbbec-sdk-v2-application">
+<h2><span class="section-number">4.1.2. </span>How to save logs in an Orbbec SDK v2 application<a class="headerlink" href="#how-to-save-logs-in-an-orbbec-sdk-v2-application" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3><span class="section-number">4.1.2.1. </span>windows<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Copy OrbbecSDKConfig.xml to the same directory as OrbbecSDK.dll.</p></li>
+<li><p>Set File Log level to 0 (Debug).</p></li>
+</ul>
+<p><img alt="image" src="../../_images/windows_sdk_level.png" /></p>
+<ul class="simple">
+<li><p>To enable firmware logging, set DefaultHeartBeat to 1 in the corresponding device section. Example for Gemini 335Le:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    &lt;Gemini335Le&gt;
+        &lt;!-- Whether to enable heartbeat by default --&gt;
+            &lt;DefaultHeartBeat&gt;1&lt;/DefaultHeartBeat&gt;
+    &lt;/Gemini335Le&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Logs are stored in the Log folder alongside the application. For example:</p></li>
+</ul>
+<p><img alt="image" src="../../_images/windows_sdk_log.png" /></p>
+</section>
+<section id="id2">
+<h3><span class="section-number">4.1.2.2. </span>Linux (x64/ARM64)<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Copy OrbbecSDKConfig.xml to the same directory as libOrbbecSDK.so.</p></li>
+<li><p>Set File Log level to 0 (Debug).</p></li>
+</ul>
+<p><img alt="image" src="../../_images/linux_log_level.png" /></p>
+<ul class="simple">
+<li><p>Enable firmware logging by setting DefaultHeartBeat to 1 in the device section. Example for Gemini 335Le:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    &lt;Gemini335Le&gt;
+        &lt;!-- Whether to enable heartbeat by default --&gt;
+            &lt;DefaultHeartBeat&gt;1&lt;/DefaultHeartBeat&gt;
+    &lt;/Gemini335Le&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Logs are stored in the Log folder alongside the application. For example:
+<img alt="image" src="../../_images/linux_sdk_log.png" /></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="how-to-increase-the-usbfs-memory-limit">
+<h1><span class="section-number">4.2. </span>How to increase the usbfs memory limit<a class="headerlink" href="#how-to-increase-the-usbfs-memory-limit" title="Link to this heading"></a></h1>
+<p>Linux Computer: USB Buffer Configuration on Ubuntu: By default, Linux-based hosts allocate only 16 MB of kernel memory for USB controller operations. This allocation may be insufficient for handling high-resolution images or multiple streams and devices. To support multiple devices, the USB controller requires more memory. Follow these steps to increase the memory allocation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">128</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">module</span><span class="o">/</span><span class="n">usbcore</span><span class="o">/</span><span class="n">parameters</span><span class="o">/</span><span class="n">usbfs_memory_mb</span>
+</pre></div>
+</div>
+<p>For making this change permanent:</p>
+<ul class="simple">
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">/etc/default/grub</span></code> file,Find and replace</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash&quot;</span>
+</pre></div>
+</div>
+<p>with this</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GRUB_CMDLINE_LINUX_DEFAULT</span><span class="o">=</span><span class="s2">&quot;quiet splash usbcore.usbfs_memory_mb=128&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Update grub</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">update</span><span class="o">-</span><span class="n">grub</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Reboot and check</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">module</span><span class="o">/</span><span class="n">usbcore</span><span class="o">/</span><span class="n">parameters</span><span class="o">/</span><span class="n">usbfs_memory_mb</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="FAQs.html" class="btn btn-neutral float-left" title="4. FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../license.html" class="btn btn-neutral float-right" title="5. License" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024-2025,Orbbec Inc. All Rights Reserved.
+      <span class="lastupdated">Last updated on 2026-05-28 09:34:25.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

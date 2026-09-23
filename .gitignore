@@ -8,22 +8,21 @@ CMakeCache.txt
 __pycache__/
 *.pyc
 
-# Large local SDK / viewer / archives (keep out of GitHub)
-OrbbecSDK_v2.9.3_*.tar.gz
-OrbbecSDK_v2*/
-OrbbecViewer_v2*/
-pyorbbecsdk/
-weights/
-yolov8s-world.pt
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/.git/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/build/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/install/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/log/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/**/build/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/**/install/
-Orbbec-Gemini-335L/OrbbecSDK_ROS2/**/log/
-Orbbec-Gemini-335L/pen_recognition/__pycache__/
+# Archives / compressed SDK packages
+*.tar.gz
+*.tar
+*.zip
+
+# Nested git metadata (vendor checkouts)
+**/.git/
+
+# Runtime logs / local outputs
+**/Log/
+OrbbecViewer_v2*/output/
 Orbbec-Gemini-335L/pen_recognition/logs/
-Orbbec-Gemini-335L/pen_recognition/models/yolov8s-world.pt
+
+# Over GitHub 100MB hard limit — cannot push
+weights/clip/ViT-B-32.pt
+
 *.onnx.bak
 *.pt.bak
