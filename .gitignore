@@ -18,6 +18,7 @@ __pycache__/
 
 # Runtime logs / local outputs
 **/Log/
+**/Ogre.log
 OrbbecViewer_v2*/output/
 Orbbec-Gemini-335L/pen_recognition/logs/
 
